@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="./banner-top.png" width="100%" alt="CSL — The first perpetual exchange for CS2 skins. On Robinhood Chain."/>
+  <img src="./banner-top.png" width="100%" alt="CSL - The first perpetual exchange for CS2 skins. On Robinhood Chain."/>
 
   [Website](https://csl.fun) · [Terminal](https://www.csl.fun/trade) · [Docs](https://docs.csl.fun) · [X](https://x.com/csldotfun)
 
@@ -17,30 +17,30 @@
 
 ## What is CSL
 
-For over a decade CS:2 skins traded like digital gold — $1B+ yearly volume, stable collector demand — with zero trading infrastructure. CSL is the missing market layer: synthetic perpetual futures on the most iconic skins in Counter-Strike.
+For over a decade CS:2 skins traded like digital gold - $1B+ yearly volume, stable collector demand - with zero trading infrastructure. CSL is the missing market layer: synthetic perpetual futures on the most iconic skins in Counter-Strike.
 
-→ Long or short 17 curated markets — Dragon Lore, Howl, Karambit Fade and more  
+→ Long or short 17 curated markets - Dragon Lore, Howl, Karambit Fade and more  
 → Up to 20x leverage with isolated margin and transparent liquidation prices  
-→ Real pricing — live marketplace feeds plus full Steam Market history since 2013  
-→ Collateral and PnL in USDG on Robinhood Chain — no inventory, no trade locks, no middlemen
+→ Real pricing - live marketplace feeds plus full Steam Market history since 2013  
+→ Collateral and PnL in USDG on Robinhood Chain - no inventory, no trade locks, no middlemen
 
 ## Architecture
 
-**Price Engine** — aggregates live lowest-listing prices from Skinport and reconstructs every skin's complete daily price history from Steam Market, back to original release. Outlier rejection, per-market candle aggregation, realtime fan-out over Server-Sent Events.
+**Price Engine** - aggregates live lowest-listing prices from Skinport and reconstructs every skin's complete daily price history from Steam Market, back to original release. Outlier rejection, per-market candle aggregation, realtime fan-out over Server-Sent Events.
 
-**Trading Engine** — server-authoritative order handling on Postgres: transactional open/close, hourly funding accrual, isolated margin, deterministic liquidation prices fixed at entry.
+**Trading Engine** - server-authoritative order handling on Postgres: transactional open/close, hourly funding accrual, isolated margin, deterministic liquidation prices fixed at entry.
 
-**Risk Engine** — hard caps enforced at the engine level: per-position collateral limits, per-user position limits, per-market open-interest ceilings, 20x max leverage. A continuous liquidation sweep monitors every open position against live marks.
+**Risk Engine** - hard caps enforced at the engine level: per-position collateral limits, per-user position limits, per-market open-interest ceilings, 20x max leverage. A continuous liquidation sweep monitors every open position against live marks.
 
-**Identity Layer** — wallet-based accounts (MetaMask / WalletConnect on Robinhood Chain). Every order is authenticated server-side against the connected address; no order can be spoofed from the client.
+**Identity Layer** - wallet-based accounts (MetaMask / WalletConnect on Robinhood Chain). Every order is authenticated server-side against the connected address; no order can be spoofed from the client.
 
-**Liquidity Vault** — the protocol-owned counterparty: USDG depositors take the other side of trader flow and earn taker fees, with losses and gains shared pro-rata. Opens to public deposits at launch.
+**Liquidity Vault** - the protocol-owned counterparty: USDG depositors take the other side of trader flow and earn taker fees, with losses and gains shared pro-rata. Opens to public deposits at launch.
 
-**Settlement Layer** — USDG deposits, withdrawals and treasury management on Robinhood Chain (Ethereum L2), rolling out with the public launch alongside $CSL.
+**Settlement Layer** - USDG deposits, withdrawals and treasury management on Robinhood Chain (Ethereum L2), rolling out with the public launch alongside $CSL.
 
 ## Markets
 
-Seventeen of the most liquid, most iconic skins in Counter-Strike — each a standalone perpetual market, priced off real marketplace data.
+Seventeen of the most liquid, most iconic skins in Counter-Strike - each a standalone perpetual market, priced off real marketplace data.
 
 | Skin | Rarity | Since | Ref. price |
 |------|--------|-------|-----------|
@@ -62,16 +62,16 @@ Seventeen of the most liquid, most iconic skins in Counter-Strike — each a sta
    Position size          $5,000   ·   Liq. price ~$11,637
 ```
 
-**Worked example — a winning long**
+**Worked example - a winning long**
 
 > You post **$250 USDG** collateral on AWP \| Dragon Lore at **20x** → $5,000 notional.
 > The reference price moves **+8%**, from $12,254 to $13,234.
-> Your PnL = 8% × $5,000 = **+$400** on $250 posted — a **+160%** return on collateral, settled in USDG.
+> Your PnL = 8% × $5,000 = **+$400** on $250 posted - a **+160%** return on collateral, settled in USDG.
 > Had it dropped ~5% instead, the position would liquidate at ~$11,637.
 
 ## Leverage & liquidation
 
-Liquidation price is fixed the moment you open, derived from entry, side and leverage — no hidden moves.
+Liquidation price is fixed the moment you open, derived from entry, side and leverage - no hidden moves.
 
 | Leverage | Move to liquidation | Example (long @ $12,254) |
 |---------:|:-------------------:|:------------------------:|
@@ -80,7 +80,7 @@ Liquidation price is fixed the moment you open, derived from entry, side and lev
 | 10x | ~10% | ~$11,058 |
 | 20x | ~5% | ~$11,637 |
 
-*Maintenance margin 0.5% · taker fee 0.06% of notional. Isolated margin — a liquidation never touches your other positions or wallet.*
+*Maintenance margin 0.5% · taker fee 0.06% of notional. Isolated margin - a liquidation never touches your other positions or wallet.*
 
 ## Why CSL
 
@@ -95,19 +95,19 @@ Liquidation price is fixed the moment you open, derived from entry, side and lev
 
 ## Roadmap
 
-- ✅ Price engine — live feeds + full Steam Market history
-- ✅ Trading engine — isolated margin, funding, liquidations
-- ✅ Terminal — charts, order flow, portfolio, leaderboard
-- 🔜 Public launch — USDG deposits, liquidity vault, $CSL
+- ✅ Price engine - live feeds + full Steam Market history
+- ✅ Trading engine - isolated margin, funding, liquidations
+- ✅ Terminal - charts, order flow, portfolio, leaderboard
+- 🔜 Public launch - USDG deposits, liquidity vault, $CSL
 - 🔜 More markets, cross-margin, mobile
 
 ## FAQ
 
-**Do I own the skin?** No. CSL is synthetic — you trade the *price*, settled in USDG. No inventory, no trade holds.
+**Do I own the skin?** No. CSL is synthetic - you trade the *price*, settled in USDG. No inventory, no trade holds.
 
 **Where do prices come from?** Live lowest-listing data from marketplaces, with full daily history reconstructed from Steam Market going back to each skin's release.
 
-**What backs my PnL?** The Liquidity Vault — USDG depositors take the other side of trader flow. It opens to the public at launch.
+**What backs my PnL?** The Liquidity Vault - USDG depositors take the other side of trader flow. It opens to the public at launch.
 
 **Is there a token?** $CSL launches with the public release. Any contract address before then is fake.
 
@@ -115,8 +115,8 @@ Liquidation price is fixed the moment you open, derived from entry, side and lev
 
 | Repo | What it is |
 |------|------------|
-| [`csl-terminal`](https://github.com/CSLdotFun/csl-terminal) | Trading terminal & landing — Next.js, TradingView charts, wallet auth |
-| [`csl-backend`](https://github.com/CSLdotFun/csl-backend) | Price + trading engine — live feeds, candles, funding, risk, liquidations |
+| [`csl-terminal`](https://github.com/CSLdotFun/csl-terminal) | Trading terminal & landing - Next.js, TradingView charts, wallet auth |
+| [`csl-backend`](https://github.com/CSLdotFun/csl-backend) | Price + trading engine - live feeds, candles, funding, risk, liquidations |
 | [`csl-docs`](https://github.com/CSLdotFun/csl-docs) | Protocol documentation at [docs.csl.fun](https://docs.csl.fun) |
 
 ## Stack
@@ -126,5 +126,5 @@ Liquidation price is fixed the moment you open, derived from entry, side and lev
 ---
 
 <div align="center">
-  <sub>$CSL launches with the public release — the contract address will be announced only on <a href="https://x.com/csldotfun">@csldotfun</a>. Trust no other source.</sub>
+  <sub>$CSL launches with the public release - the contract address will be announced only on <a href="https://x.com/csldotfun">@csldotfun</a>. Trust no other source.</sub>
 </div>
