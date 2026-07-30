@@ -10,6 +10,8 @@
   ![Oracle](https://img.shields.io/badge/oracle-Steam%20%2B%20Skinport-f59e0b)
   ![Feed](https://img.shields.io/badge/price%20feed-realtime%20SSE-06B6D4)
 
+  **$CSL:** `0x664f813ba5568966b8c7aaa03ef2218658a57777` on Robinhood Chain
+
   <img src="./hero-bg.png" width="100%" alt="CS2 skins traded on CSL"/>
 </div>
 
@@ -34,9 +36,9 @@ For over a decade CS:2 skins traded like digital gold - $1B+ yearly volume, stab
 
 **Identity Layer** - wallet-based accounts (MetaMask / WalletConnect on Robinhood Chain). Every order is authenticated server-side against the connected address; no order can be spoofed from the client.
 
-**Liquidity Vault** - the protocol-owned counterparty: USDG depositors take the other side of trader flow and earn taker fees, with losses and gains shared pro-rata. Opens to public deposits at launch.
+**Liquidity Vault** - the protocol-owned counterparty: USDG depositors take the other side of trader flow and earn taker fees, with losses and gains shared pro-rata. Live now, open to public deposits.
 
-**Settlement Layer** - USDG deposits, withdrawals and treasury management on Robinhood Chain (Ethereum L2), rolling out with the public launch alongside $CSL.
+**Settlement Layer** - USDG deposits, withdrawals and treasury management on Robinhood Chain (Ethereum L2). Live now.
 
 ## Markets
 
@@ -80,7 +82,7 @@ Liquidation price is fixed the moment you open, derived from entry, side and lev
 | 10x | ~10% | ~$11,058 |
 | 20x | ~5% | ~$11,637 |
 
-*Maintenance margin 0.5% · taker fee 0.06% of notional. Isolated margin - a liquidation never touches your other positions or wallet.*
+*Maintenance margin 0.5% · taker fee 0.15% of notional. Isolated margin - a liquidation never touches your other positions or wallet.*
 
 ## Why CSL
 
@@ -91,15 +93,15 @@ Liquidation price is fixed the moment you open, derived from entry, side and lev
 | Settlement | Item in inventory | USDG on Robinhood Chain |
 | Trade locks / holds | 7 days | None |
 | Liquidity | Marketplace-dependent | Instant, protocol-backed |
-| Fees | 10–15% marketplace cut | 0.06% taker |
+| Fees | 10–15% marketplace cut | 0.15% taker |
 
 ## Roadmap
 
 - ✅ Price engine - live feeds + full Steam Market history
 - ✅ Trading engine - isolated margin, funding, liquidations
 - ✅ Terminal - charts, order flow, portfolio, leaderboard
-- 🔜 Public launch - USDG deposits, liquidity vault, $CSL
-- 🔜 More markets, cross-margin, mobile
+- ✅ Public launch - USDG deposits, liquidity vault, $CSL
+- 🔜 Staking, more markets, cross-margin, mobile
 
 ## FAQ
 
@@ -107,9 +109,9 @@ Liquidation price is fixed the moment you open, derived from entry, side and lev
 
 **Where do prices come from?** Live lowest-listing data from marketplaces, with full daily history reconstructed from Steam Market going back to each skin's release.
 
-**What backs my PnL?** The Liquidity Vault - USDG depositors take the other side of trader flow. It opens to the public at launch.
+**What backs my PnL?** The Liquidity Vault - USDG depositors take the other side of trader flow. Live now, open to the public.
 
-**Is there a token?** $CSL launches with the public release. Any contract address before then is fake.
+**Is there a token?** Yes - $CSL is live: `0x664f813ba5568966b8c7aaa03ef2218658a57777` on Robinhood Chain. Verify against [@csldotfun](https://x.com/csldotfun) before trusting any other source.
 
 ## Repositories
 
@@ -126,5 +128,5 @@ Liquidation price is fixed the moment you open, derived from entry, side and lev
 ---
 
 <div align="center">
-  <sub>$CSL launches with the public release - the contract address will be announced only on <a href="https://x.com/csldotfun">@csldotfun</a>. Trust no other source.</sub>
+  <sub>$CSL: <code>0x664f813ba5568966b8c7aaa03ef2218658a57777</code> on Robinhood Chain. Verify against <a href="https://x.com/csldotfun">@csldotfun</a> - trust no other source.</sub>
 </div>
